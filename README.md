@@ -1,7 +1,3 @@
-Here’s a sample documentation for your Shoe E-Commerce project hosted at [https://shoe-ecommerce-three.vercel.app/](https://shoe-ecommerce-three.vercel.app/), including current features, tools used, and a roadmap for future improvements:
-
----
-
 # 🥿 Shoe E-Commerce Web App Documentation
 
 ## 🌐 Live Site
