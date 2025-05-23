@@ -36,8 +36,8 @@ function ResponsiveAppBar() {
     };
 
     return (
-        <AppBar position="static" sx={{ bgcolor: 'white', color: 'black' }}>
-            < Container maxWidth="xl"  >
+        <AppBar position="static" sx={{ bgcolor: 'white', color: 'black' }} >
+            < Container maxWidth="xl">
                 <Toolbar disableGutters >
                     <Typography
                         variant="h6"
@@ -91,7 +91,7 @@ function ResponsiveAppBar() {
                             ))}
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+
                     <Typography
                         variant="h5"
                         noWrap
@@ -108,7 +108,7 @@ function ResponsiveAppBar() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        <h1 className='text-4xl text-[#6e7051]'><span className='text-[#6e7051]'>W</span>EAR</h1>
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (

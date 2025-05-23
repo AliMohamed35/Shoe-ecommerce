@@ -1,8 +1,8 @@
 function Hero() {
     return (
-        <section className="pt-[3rem] h-[500px] sm:h-[800px] bg-[url(./assets/recycled-shoe-store-hero-image-bg.jpg)] bg-no-repeat bg-center bg-fixed">
+        <section className="pt-[3rem] h-[500px] sm:h-[800px] bg-[url(./assets/recycled-shoe-store-hero-image-bg.jpg)] bg-no-repeat bg-center ">
             <div className="max-w-[1300px] mx-auto h-full px-4 sm:px-6 lg:px-8">
-                <h1 className="text-white text-5xl sm:text-7xl lg:text-9xl mt-[3rem] text-center sm:text-left">New <br /> Collections</h1>
+                <h1 className="text-white text-5xl sm:text-7xl lg:text-9xl mt-[3rem] text-center sm:text-left font-mono">New <br /> Collections</h1>
 
                 <p className="text-white text-lg sm:text-xl sm:text-left text-center mt-6 max-w-2xl leading-relaxed">
                     Step into sustainable fashion with our eco-conscious footwear collection.
