@@ -80,7 +80,7 @@ export default function Formen() {
                         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                             {filteredProducts.map((item) => (
                                 <div
-                                    onClick={() => setSelectedProduct(item)}
+
                                     key={item.id}
                                     className="group relative bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
                                 >
@@ -98,6 +98,7 @@ export default function Formen() {
                                         {/* Hover Overlay */}
                                         <div className="absolute inset-0 bg-transparent group-hover:bg-gray-500/30 transition-all duration-300 flex items-center justify-center">
                                             <button
+                                                onClick={() => setSelectedProduct(item)}
                                                 className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 bg-white text-[#6e7051] px-6 py-2 rounded-full font-semibold hover:bg-[#6e7051] hover:text-white cursor-pointer"
                                             >
                                                 Details
