@@ -104,7 +104,7 @@ function About() {
                 </div>
             </section>
 
-            <div className='w-full bg-[url("./assets/recycled-shoe-store-hero-image-bg.jpg")] h-[300px] sm:h-[400px] md:h-[500px] bg-cover bg-center sm:bg-fixed bg-no-repeat text-center flex justify-center items-center flex-col'>
+            <div className='w-full bg-[url("/recycled-shoe-store-hero-image-bg.jpg")] h-[300px] sm:h-[400px] md:h-[500px] bg-cover bg-center sm:bg-fixed bg-no-repeat text-center flex justify-center items-center flex-col'>
                 <h3 className='text-white text-3xl font-mono sm:text-7xl'>"NEW COLLECTIONS"</h3>
                 <p className='text-white text-xl w-3/5 mt-7 zfont-mono sm:text-7xl'>Explore more and more of our quality-focused shoes</p>
             </div>
