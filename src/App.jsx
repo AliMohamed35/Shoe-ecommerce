@@ -1,18 +1,45 @@
-import About from "./components/About"
-import Hero from "./components/Hero"
+import Home from "../pages/Home"
+import Formen from "../pages/For_men"
+import Forwomen from "../pages/For_women"
 import ResponsiveAppBar from "./components/Nav"
-import MostSearch from "./components/MostSearch"
 import Footer from "./components/Footer"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NotFound from './components/NotFound'
 
-function App() {
+const MainLayout = ({ children }) => {
   return (
     <>
       <ResponsiveAppBar />
-      <Hero />
-      <About />
-      <MostSearch />
+      {children}
       <Footer />
     </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={
+          <MainLayout>
+            <Home />
+          </MainLayout>
+        } />
+
+        <Route path="/formen" element={
+          <MainLayout>
+            <Formen />
+          </MainLayout>
+        } />
+
+        <Route path="/forwomen" element={
+          <MainLayout>
+            <Forwomen />
+          </MainLayout>
+        } />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
