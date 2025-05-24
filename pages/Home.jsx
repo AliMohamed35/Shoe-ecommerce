@@ -4,7 +4,7 @@ import MostSearch from "../src/components/MostSearch"
 function Home() {
     return (
         <>
-            <section className="pt-[3rem] h-[500px] sm:h-[800px] bg-[url(./assets/recycled-shoe-store-hero-image-bg.jpg)] bg-no-repeat bg-center ">
+            <section className="pt-[3rem] h-[500px] sm:h-[800px] bg-[url(recycled-shoe-store-hero-image-bg.jpg)] bg-no-repeat bg-center ">
                 <div className="max-w-[1300px] mx-auto h-full px-4 sm:px-6 lg:px-8">
                     <h1 className="text-white text-5xl sm:text-7xl lg:text-9xl mt-[3rem] text-center sm:text-left font-mono">New <br /> Collections</h1>
 

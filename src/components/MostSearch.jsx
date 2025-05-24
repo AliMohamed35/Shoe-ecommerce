@@ -1,10 +1,10 @@
-import image1 from "../assets/women's green.jpg"
+import image1 from "/women's green.jpg"
 
 
 function MostSearch() {
     const dummy = [
         {
-            img: "/src/assets/women's green.jpg",
+            img: "/women's green.jpg",
             id: 1,
             name: "Women's Green training",
             not_price: 64.90,
@@ -12,7 +12,7 @@ function MostSearch() {
             statue: 'sale'
         },
         {
-            img: "/src/assets/women's green.jpg",
+            img: "/women's green.jpg",
             id: 2,
             name: "Women's Green training",
             not_price: 64.90,
@@ -20,7 +20,7 @@ function MostSearch() {
             statue: 'sale'
         },
         {
-            img: "/src/assets/women's green.jpg",
+            img: "/women's green.jpg",
             id: 3,
             name: "Women's Green training",
             not_price: 64.90,
@@ -28,7 +28,7 @@ function MostSearch() {
             statue: 'no'
         },
         {
-            img: "/src/assets/women's green.jpg",
+            img: "/women's green.jpg",
             id: 4,
             name: "Women's Green training",
             not_price: 64.90,
@@ -36,7 +36,7 @@ function MostSearch() {
             statue: 'no'
         },
         {
-            img: "/src/assets/women's green.jpg",
+            img: "/women's green.jpg",
             id: 5,
             name: "Women's Green training",
             not_price: 64.90,
@@ -44,7 +44,7 @@ function MostSearch() {
             statue: 'no'
         },
         {
-            img: "/src/assets/women's green.jpg",
+            img: "/women's green.jpg",
             id: 6,
             name: "Women's Green training",
             not_price: 64.90,

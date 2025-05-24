@@ -1,4 +1,4 @@
-import about from '../assets/recycled-shoe-store-home-about-image.jpg'
+import about from '/recycled-shoe-store-home-about-image.jpg'
 
 
 function About() {
