@@ -1,4 +1,5 @@
 import About from "../src/components/About"
+import Customers from "../src/components/Customers"
 import MostSearch from "../src/components/MostSearch"
 
 function Home() {
@@ -22,6 +23,20 @@ function Home() {
 
             <About />
             <MostSearch />
+
+            <section className="grid grid-cols-1 sm:grid-cols-2  p-4 sm:p-10 gap-4">
+                <div className="bg-[url(/thumbnail1.jpg)] bg-cover bg-no-repeat flex flex-col justify-center items-center text-white h-[300px] sm:h-[400px] md:h-[500px]">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl mb-6 sm:mb-10">Men</h2>
+                    <button className="text-base sm:text-xl bg-black text-white px-4 sm:px-6 py-2 sm:py-4 border-2 border-white hover:bg-white hover:text-black transition-colors">Shop for Men</button>
+                </div>
+
+                <div className="bg-[url(/thumbnail2.jpg)] bg-cover bg-no-repeat flex flex-col justify-center items-center text-white h-[300px] sm:h-[400px] md:h-[500px]">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl mb-6 sm:mb-10">Women</h2>
+                    <button className="text-base sm:text-xl bg-black text-white px-4 sm:px-6 py-2 sm:py-4 border-2 border-white hover:bg-white hover:text-black transition-colors">Shop for Women</button>
+                </div>
+            </section>
+
+            <Customers />npm i @uidotdev/usehooks
         </>
     )
 }

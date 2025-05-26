@@ -1,10 +1,12 @@
 import { useState } from "react"
 import SearchIcon from '@mui/icons-material/Search';
 import ProductModel from "../src/components/ProductModel";
+import { useDebounce } from 'use-debounce'
 
 export default function Formen() {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const [debouncedText] = useDebounce(searchTerm, 1000) // to optimize the search (custom hook) 
 
     const searchHandle = (e) => {
         setSearchTerm(e);
@@ -55,7 +57,7 @@ export default function Formen() {
         },
     ]
 
-    const filteredProducts = dummy2.filter((item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    const filteredProducts = dummy2.filter((item) => item.name.toLowerCase().includes(debouncedText.toLowerCase()))
     return (
         <>
             <section className=" bg-[#ebebd3]">
