@@ -130,9 +130,9 @@ function ResponsiveAppBar() {
                     </Box>
 
 
-                    <div className="text-[#6e7051] hover:text-[#4a4b3a] cursor-pointer">
+                    <Link className="text-[#7c7f55] hover:text-[#4a4b3a] cursor-pointer" component={Link} to={'/cart'}>
                         <LocalMallIcon className='!text-4xl' />
-                    </div>
+                    </Link>
 
                 </Toolbar>
             </Container>

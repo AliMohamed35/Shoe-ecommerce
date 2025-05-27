@@ -36,7 +36,7 @@ function Home() {
                 </div>
             </section>
 
-            <Customers />npm i @uidotdev/usehooks
+            <Customers />
         </>
     )
 }

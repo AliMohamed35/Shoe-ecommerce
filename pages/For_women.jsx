@@ -1,8 +1,10 @@
 import { useState } from "react"
 import SearchIcon from '@mui/icons-material/Search';
+import ProductModel from "../src/components/ProductModel";
 
 export default function Formen() {
     const [searchTerms, setSearchTerms] = useState('');
+    const [selectedProduct, setSelectedProduct] = useState(null);
 
     const onChangeHandler = (e) => {
         setSearchTerms(e)
@@ -95,6 +97,7 @@ export default function Formen() {
                                         {/* Hover Overlay */}
                                         <div className="absolute inset-0 bg-transparent group-hover:bg-gray-500/30 transition-all duration-300 flex items-center justify-center">
                                             <button
+                                                onClick={() => setSelectedProduct(item)}
                                                 className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 bg-white text-[#6e7051] px-6 py-2 rounded-full font-semibold hover:bg-[#6e7051] hover:text-white cursor-pointer"
                                             >
                                                 Details
@@ -125,6 +128,8 @@ export default function Formen() {
                         {filteredProducts.length == 0 && (
                             <p className="text-center mt-8 text-gray-500">No products match your search.</p>
                         )}
+
+                        <ProductModel selectedProduct={selectedProduct} onClose={() => setSelectedProduct(null)} />
                     </div>
                 </div>
             </section >
