@@ -1,8 +1,11 @@
 import { useState } from "react"
 import SearchIcon from '@mui/icons-material/Search';
 import ProductModel from "../src/components/ProductModel";
+import { useScrollToTop } from "../src/hooks/useScrollToTop";
+import DividerInShop from "../src/components/DividerInShop";
 
 export default function Formen() {
+    useScrollToTop(); // to start the page layout from the top
     const [searchTerms, setSearchTerms] = useState('');
     const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -133,6 +136,7 @@ export default function Formen() {
                     </div>
                 </div>
             </section >
+            <DividerInShop />
         </>
     )
 }

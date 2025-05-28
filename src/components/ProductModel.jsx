@@ -16,13 +16,16 @@ export default function ProductModel({ selectedProduct, onClose }) {
                     alt={selectedProduct.name}
                     className="w-full h-60 object-cover rounded mb-4 mt-4"
                 />
-                <h2 className="text-xl font-bold mb-2">{selectedProduct.name}</h2>
-                <p className="text-gray-700 mb-2">
-                    Price: ${selectedProduct.price.toFixed(2)}
-                </p>
-                <p className="text-gray-600">Auctor eros suspendisse tellus venenatis sodales purus non pellentesque amet, nunc sit eu, enim fringilla egestas pulvinar odio feugiat.</p>
 
-                <button className="mt-10 bg-orange-600 p-4 text-white rounded">Add to Cart</button>
+                <div>
+                    <h2 className="text-xl font-bold mb-2">{selectedProduct.name}</h2>
+                    <p className="text-[#6e7051] font-bold mb-2">
+                        Price: ${selectedProduct.price}
+                    </p>
+                    <p className="text-gray-600 font-bold">Auctor eros suspendisse tellus venenatis sodales purus non pellentesque amet, nunc sit eu, enim fringilla egestas pulvinar odio feugiat.</p>
+
+                    <button className="mt-8 bg-orange-600 p-4 text-white rounded cursor-pointer">Add to Cart</button>
+                </div>
             </div>
         </div>
     );

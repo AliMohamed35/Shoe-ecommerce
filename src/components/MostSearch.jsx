@@ -1,52 +1,54 @@
-import image1 from "/women's green.jpg"
-
+import ProductModel from "./ProductModel"
+import { useState } from "react"
 
 function MostSearch() {
+    const [selectedProduct, setSelectedProduct] = useState(null)
+
     const dummy = [
         {
-            img: "/women's green.jpg",
+            img: "/best1.jpg",
             id: 1,
-            name: "Women's Green training",
+            name: "Mens' Classic Mint",
             not_price: 64.90,
             price: 49.90,
             statue: 'sale'
         },
         {
-            img: "/women's green.jpg",
+            img: "/best2.jpg",
             id: 2,
-            name: "Women's Green training",
+            name: "Women's Orange Sneaker",
             not_price: 64.90,
             price: 49.90,
             statue: 'sale'
         },
         {
-            img: "/women's green.jpg",
+            img: "/best3.jpg",
             id: 3,
-            name: "Women's Green training",
+            name: "Women's Cream Suede",
             not_price: 64.90,
             price: 49.90,
             statue: 'no'
         },
         {
-            img: "/women's green.jpg",
+            img: "/best4.jpg",
             id: 4,
-            name: "Women's Green training",
+            name: "Women's Mint Sneaker",
             not_price: 64.90,
             price: 49.90,
             statue: 'no'
         },
         {
-            img: "/women's green.jpg",
+            img: "/best5.jpg",
             id: 5,
-            name: "Women's Green training",
+            name: "Women's Choco City Run",
             not_price: 64.90,
             price: 49.90,
             statue: 'no'
         },
         {
-            img: "/women's green.jpg",
+            img: "/best6.jpg",
             id: 6,
-            name: "Women's Green training",
+            name: "Men's Moonstone Sneaker",
             not_price: 64.90,
             price: 49.90,
             statue: 'no'
@@ -69,7 +71,7 @@ function MostSearch() {
                             >
                                 <div className="relative overflow-hidden rounded-t-lg">
                                     <img
-                                        src={image1}
+                                        src={item.img}
                                         alt={item.name}
                                         className="w-full h-[300px] sm:h-[350px] object-cover transform group-hover:scale-105 transition-transform duration-300"
                                     />
@@ -81,6 +83,7 @@ function MostSearch() {
                                     {/* Hover Overlay */}
                                     <div className="absolute inset-0 bg-transparent group-hover:bg-gray-500/30 transition-all duration-300 flex items-center justify-center">
                                         <button
+                                            onClick={() => setSelectedProduct(item)}
                                             className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 bg-white text-[#6e7051] px-6 py-2 rounded-full font-semibold hover:bg-[#6e7051] hover:text-white cursor-pointer"
                                         >
                                             Details
@@ -105,6 +108,8 @@ function MostSearch() {
                             </div>
                         ))}
                     </div>
+
+                    <ProductModel selectedProduct={selectedProduct} onClose={() => setSelectedProduct(null)} />
                 </div>
             </div>
         </section>

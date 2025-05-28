@@ -6,6 +6,7 @@ import ResponsiveAppBar from "./components/Nav"
 import Footer from "./components/Footer"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NotFound from './components/NotFound'
+import Contact from "../pages/Contact"
 
 const MainLayout = ({ children }) => {
   return (
@@ -43,6 +44,12 @@ function App() {
         <Route path="/cart" element={
           <MainLayout>
             <Cart />
+          </MainLayout>
+        }></Route>
+
+        <Route path="/contact" element={
+          <MainLayout>
+            <Contact />
           </MainLayout>
         }></Route>
 

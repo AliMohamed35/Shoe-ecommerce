@@ -2,8 +2,11 @@ import { useState } from "react"
 import SearchIcon from '@mui/icons-material/Search';
 import ProductModel from "../src/components/ProductModel";
 import { useDebounce } from 'use-debounce'
+import DividerInShop from "../src/components/DividerInShop";
+import { useScrollToTop } from "../src/hooks/useScrollToTop";
 
 export default function Formen() {
+    useScrollToTop();
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [debouncedText] = useDebounce(searchTerm, 1000) // to optimize the search (custom hook) 
@@ -137,6 +140,8 @@ export default function Formen() {
                     </div>
                 </div>
             </section>
+
+            <DividerInShop />
         </>
     )
 }
