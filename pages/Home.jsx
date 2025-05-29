@@ -22,8 +22,8 @@ function Home() {
                 </div>
             </section>
 
-            <About />
             <MostSearch />
+            <About />
 
             <section className="grid grid-cols-1 sm:grid-cols-2  p-4 sm:p-10 gap-4">
                 <div className="bg-[url(/thumbnail1.jpg)] bg-cover bg-no-repeat flex flex-col justify-center items-center text-white h-[300px] sm:h-[400px] md:h-[500px]">

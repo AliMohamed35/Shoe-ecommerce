@@ -82,15 +82,14 @@ function About() {
     return (
         <>
             <section className="pt-[3rem] min-h-[800px] sm:min-h-[1000px]">
+
+                <div className='w-full bg-[url("/recycled-shoe-store-hero-image-bg.jpg")] h-[300px] sm:h-[400px] md:h-[500px] bg-cover bg-center sm:bg-fixed bg-no-repeat text-center flex justify-center items-center flex-col'>
+                    <h3 className='text-white text-3xl font-mono sm:text-7xl'>"NEW COLLECTIONS"</h3>
+                    <p className='text-white text-xl w-3/5 mt-7 zfont-mono sm:text-7xl'>Explore more and more of our quality-focused shoes</p>
+                </div>
+
                 <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
-                    {/* LOGOS */}
-                    <div className="flex flex-wrap justify-center items-center gap-16 mt-12 pb-8 border-b border-gray-300">
-                        {brands.map((item) => (
-                            <div key={item.id} className="flex items-center justify-center border-0 sm:border-r border-gray-300 pr-8">
-                                {item.svg}
-                            </div>
-                        ))}
-                    </div>
+
 
                     {/* ABOUT US INFO */}
                     <div className='flex mt-20 gap-8 sm:flex-row flex-col'>
@@ -101,13 +100,20 @@ function About() {
                             <p className='text-base sm:text-lg md:text-xl leading-relaxed text-gray-400'>Nullam auctor faucibus ridiculus dignissim sed et auctor sed eget auctor nec sed elit nunc, magna non urna amet ac neque ut quam enim pretium risus gravida ullamcorper adipiscing at ut magna.</p>
                         </div>
                     </div>
+
+
+                    {/* LOGOS */}
+                    <div className="flex flex-wrap justify-center items-center gap-16 mt-12 pb-8 border-b border-gray-300">
+                        {brands.map((item) => (
+                            <div key={item.id} className="flex items-center justify-center border-0 sm:border-r border-gray-300 pr-8">
+                                {item.svg}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
-            <div className='w-full bg-[url("/recycled-shoe-store-hero-image-bg.jpg")] h-[300px] sm:h-[400px] md:h-[500px] bg-cover bg-center sm:bg-fixed bg-no-repeat text-center flex justify-center items-center flex-col'>
-                <h3 className='text-white text-3xl font-mono sm:text-7xl'>"NEW COLLECTIONS"</h3>
-                <p className='text-white text-xl w-3/5 mt-7 zfont-mono sm:text-7xl'>Explore more and more of our quality-focused shoes</p>
-            </div>
+
         </>
     )
 }
