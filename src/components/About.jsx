@@ -1,5 +1,5 @@
 import about from '/recycled-shoe-store-home-about-image.jpg'
-
+import { motion } from 'framer-motion';
 
 function About() {
     let brands = [
@@ -79,42 +79,119 @@ function About() {
         },
     ]
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut"
+            }
+        }
+    };
+
     return (
-        <>
-            <section className="pt-[3rem] min-h-[800px] sm:min-h-[1000px]">
+        <section className="pt-[3rem] min-h-[800px] sm:min-h-[1000px] bg-gradient-to-b from-white to-gray-50">
+            <div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className='w-full bg-[url("/recycled-shoe-store-hero-image-bg.jpg")] h-[300px] sm:h-[400px] md:h-[500px] bg-cover bg-center sm:bg-fixed bg-no-repeat text-center flex justify-center items-center flex-col relative'
+            >
+                <div className="absolute inset-0 bg-black/30"></div>
+                <motion.h3
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className='text-white text-3xl font-mono sm:text-7xl relative z-10'
+                >
+                    "NEW COLLECTIONS"
+                </motion.h3>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    className='text-white text-xl w-3/5 mt-7 z-10 sm:text-2xl'
+                >
+                    Explore more and more of our quality-focused shoes
+                </motion.p>
+            </div>
 
-                <div className='w-full bg-[url("/recycled-shoe-store-hero-image-bg.jpg")] h-[300px] sm:h-[400px] md:h-[500px] bg-cover bg-center sm:bg-fixed bg-no-repeat text-center flex justify-center items-center flex-col'>
-                    <h3 className='text-white text-3xl font-mono sm:text-7xl'>"NEW COLLECTIONS"</h3>
-                    <p className='text-white text-xl w-3/5 mt-7 zfont-mono sm:text-7xl'>Explore more and more of our quality-focused shoes</p>
-                </div>
+            <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+                {/* ABOUT US INFO */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className='flex mt-20 gap-8 sm:flex-row flex-col'
+                >
+                    <motion.img
+                        variants={itemVariants}
+                        src={about}
+                        alt="about-us"
+                        className='h-[300px] sm:h-[400px] md:h-[500px] object-cover w-full sm:w-1/2 rounded-xl shadow-xl'
+                    />
+                    <motion.div
+                        variants={itemVariants}
+                        className='p-4 sm:p-10'
+                    >
+                        <motion.h2
+                            whileHover={{ scale: 1.05 }}
+                            className='text-orange-400 font-bold text-2xl border-b-2 border-amber-400 w-fit'
+                        >
+                            About us
+                        </motion.h2>
+                        <motion.p
+                            whileHover={{ scale: 1.02 }}
+                            className='text-3xl sm:text-4xl md:text-5xl w-full md:w-3/4 my-6 sm:my-8 md:my-10 font-medium text-gray-800'
+                        >
+                            Selected materials designed for comfort and sustainability
+                        </motion.p>
+                        <motion.p
+                            whileHover={{ scale: 1.02 }}
+                            className='text-base sm:text-lg md:text-xl leading-relaxed text-gray-600'
+                        >
+                            Nullam auctor faucibus ridiculus dignissim sed et auctor sed eget auctor nec sed elit nunc, magna non urna amet ac neque ut quam enim pretium risus gravida ullamcorper adipiscing at ut magna.
+                        </motion.p>
+                    </motion.div>
+                </motion.div>
 
-                <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
-
-
-                    {/* ABOUT US INFO */}
-                    <div className='flex mt-20 gap-8 sm:flex-row flex-col'>
-                        <img src={about} alt="about-us" className='h-[300px] sm:h-[400px] md:h-[500px] object-cover w-full sm:w-1/2' />
-                        <div className='p-4 sm:p-10'>
-                            <h2 className='text-orange-400 font-bold text-2xl border-b-2 border-amber-400 w-fit'>About us</h2>
-                            <p className='text-3xl sm:text-4xl md:text-5xl w-full md:w-3/4 my-6 sm:my-8 md:my-10 font-medium'>Selected materials designed for comfort and sustainability</p>
-                            <p className='text-base sm:text-lg md:text-xl leading-relaxed text-gray-400'>Nullam auctor faucibus ridiculus dignissim sed et auctor sed eget auctor nec sed elit nunc, magna non urna amet ac neque ut quam enim pretium risus gravida ullamcorper adipiscing at ut magna.</p>
-                        </div>
-                    </div>
-
-
-                    {/* LOGOS */}
-                    <div className="flex flex-wrap justify-center items-center gap-16 mt-12 pb-8 border-b border-gray-300">
-                        {brands.map((item) => (
-                            <div key={item.id} className="flex items-center justify-center border-0 sm:border-r border-gray-300 pr-8">
-                                {item.svg}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-
-        </>
+                {/* LOGOS */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="flex flex-wrap justify-center items-center gap-16 mt-12 pb-8 border-b border-gray-300"
+                >
+                    {brands.map((item) => (
+                        <motion.div
+                            key={item.id}
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.1 }}
+                            className="flex items-center justify-center border-0 sm:border-r border-gray-300 pr-8"
+                        >
+                            {item.svg}
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </div>
+        </section>
     )
 }
 
