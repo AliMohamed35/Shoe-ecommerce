@@ -85,9 +85,7 @@ function Home() {
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.02 }}
                     className="bg-[url(/thumbnail2.jpg)] bg-cover bg-no-repeat flex flex-col justify-center items-center text-white h-[300px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-xl"

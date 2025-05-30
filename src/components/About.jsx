@@ -102,7 +102,7 @@ function About() {
     };
 
     return (
-        <section className="pt-[3rem] min-h-[800px] sm:min-h-[1000px] bg-gradient-to-b from-white to-gray-50">
+        <section className="pt-[3rem] min-h-[800px] sm:min-h-[1000px] bg-gradient-to-b from-white to-gray-50 overflow-x-hidden">
             <div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -177,14 +177,14 @@ function About() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="flex flex-wrap justify-center items-center gap-16 mt-12 pb-8 border-b border-gray-300"
+                    className="flex flex-wrap justify-center items-center gap-8 sm:gap-16 mt-12 pb-8 border-b border-gray-300"
                 >
                     {brands.map((item) => (
                         <motion.div
                             key={item.id}
                             variants={itemVariants}
                             whileHover={{ scale: 1.1 }}
-                            className="flex items-center justify-center border-0 sm:border-r border-gray-300 pr-8"
+                            className="flex items-center justify-center border-0 sm:border-r border-gray-300 pr-0 sm:pr-8"
                         >
                             {item.svg}
                         </motion.div>
