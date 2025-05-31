@@ -35,7 +35,7 @@ export default function Forwomen() {
             id: 3,
             name: 'shoes 1',
             price: 50.00,
-            statue: 'sale',
+            statue: 'no',
             img: "/womens.jpg",
         },
         {
@@ -56,7 +56,7 @@ export default function Forwomen() {
             id: 6,
             name: 'shoes 1',
             price: 50.00,
-            statue: 'sale',
+            statue: 'no',
             img: "/womens.jpg",
         },
     ]
@@ -81,7 +81,7 @@ export default function Forwomen() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="relative mt-6 p-4"
                     >
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none ml-2">
+                        <div className="absolute inset-y-0 pl-3 flex items-center pointer-events-none ml-2">
                             <SearchIcon className="text-gray-500" />
                         </div>
                         <input

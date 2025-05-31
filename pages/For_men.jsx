@@ -28,7 +28,7 @@ export default function Formen() {
             id: 2,
             name: 'shoes 2',
             price: 50.00,
-            statue: 'sale',
+            statue: 'no',
             img: "/women's green.jpg",
         },
         {
@@ -42,7 +42,7 @@ export default function Formen() {
             id: 4,
             name: 'shoes 4',
             price: 50.00,
-            statue: 'sale',
+            statue: 'No',
             img: "/women's green.jpg",
         },
         {
@@ -56,7 +56,7 @@ export default function Formen() {
             id: 6,
             name: 'shoes 6',
             price: 50.00,
-            statue: 'sale',
+            statue: 'No',
             img: "/women's green.jpg",
         },
     ]
@@ -81,7 +81,7 @@ export default function Formen() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="relative mt-6 p-4"
                     >
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none ml-2">
+                        <div className="absolute inset-y-0 pl-3 flex items-center pointer-events-none ml-2">
                             <SearchIcon className="text-gray-500" />
                         </div>
                         <input

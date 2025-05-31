@@ -34,20 +34,25 @@ function Home() {
                         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                         className="mt-9 flex flex-col sm:flex-row gap-4 sm:gap-8"
                     >
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="hover:text-white hover:bg-[#6e7051] px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-[1.2rem] bg-white text-black transition w-full sm:w-auto rounded-lg shadow-lg"
-                        >
-                            Shop Men
-                        </motion.button>
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="hover:text-white hover:bg-[#6e7051] px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-[1.2rem] bg-white text-black transition w-full sm:w-auto rounded-lg shadow-lg"
-                        >
-                            Shop Women
-                        </motion.button>
+                        <Link to={'/formen'}>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="hover:text-white hover:bg-[#6e7051] px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-[1.2rem] bg-white text-black transition w-full sm:w-auto rounded-lg shadow-lg"
+                            >
+                                Shop for Men
+                            </motion.button>
+                        </Link>
+
+                        <Link to={'/forwomen'}>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="hover:text-white hover:bg-[#6e7051] px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-[1.2rem] bg-white text-black transition w-full sm:w-auto rounded-lg shadow-lg"
+                            >
+                                Shop for Women
+                            </motion.button>
+                        </Link>
                     </motion.div>
                 </div>
             </section>
