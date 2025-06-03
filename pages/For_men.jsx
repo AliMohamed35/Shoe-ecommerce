@@ -5,16 +5,26 @@ import { useDebounce } from 'use-debounce'
 import DividerInShop from "../src/components/DividerInShop";
 import { useScrollToTop } from "../src/hooks/useScrollToTop";
 import { motion } from "framer-motion";
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../src/store/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
 export default function Formen() {
     useScrollToTop();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedProduct, setSelectedProduct] = useState(null);
-    const [debouncedText] = useDebounce(searchTerm, 1000)
+    const [debouncedText] = useDebounce(searchTerm, 1000);
 
     const searchHandle = (e) => {
         setSearchTerm(e);
     }
+
+    const handleAddToCart = (item) => {
+        dispatch(cartActions.addToCart(item));
+        navigate('/cart');
+    };
 
     let dummy2 = [
         {
@@ -81,7 +91,7 @@ export default function Formen() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="relative mt-6 p-4"
                     >
-                        <div className="absolute inset-y-0 pl-3 flex items-center pointer-events-none ml-2">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none ml-2">
                             <SearchIcon className="text-gray-500" />
                         </div>
                         <input
@@ -103,39 +113,56 @@ export default function Formen() {
                                     className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
                                 >
                                     <div className="relative overflow-hidden">
-                                        <img
+                                        <motion.img
+                                            whileHover={{ scale: 1.1 }}
+                                            transition={{ duration: 0.4 }}
                                             src={item.img}
                                             alt={item.name}
-                                            className="w-full h-[350px] sm:h-[400px] object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                            className="w-full h-[350px] sm:h-[400px] object-cover"
                                         />
                                         {item.statue.includes('sale') && (
-                                            <div className="absolute top-4 right-4 w-14 h-14 rounded-full bg-[#6e7051] text-white flex items-center justify-center text-sm font-bold shadow-lg transform rotate-12">
+                                            <motion.div
+                                                initial={{ opacity: 0, scale: 0 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                transition={{ duration: 0.4 }}
+                                                className="absolute top-4 right-4 w-14 h-14 rounded-full bg-[#6e7051] text-white flex items-center justify-center text-sm font-bold shadow-lg transform rotate-12"
+                                            >
                                                 Sale
-                                            </div>
+                                            </motion.div>
                                         )}
                                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                                            <button
+                                            <motion.button
+                                                whileHover={{ scale: 1.1 }}
+                                                whileTap={{ scale: 0.95 }}
                                                 onClick={() => setSelectedProduct(item)}
                                                 className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 bg-white text-[#6e7051] px-8 py-3 rounded-full font-semibold hover:bg-[#6e7051] hover:text-white cursor-pointer shadow-lg"
                                             >
                                                 View Details
-                                            </button>
+                                            </motion.button>
                                         </div>
                                     </div>
 
                                     <div className="p-6">
-                                        <h3 className="text-xl font-semibold mb-3 text-gray-800 line-clamp-2">
+                                        <motion.h3
+                                            whileHover={{ scale: 1.02 }}
+                                            className="text-xl font-semibold mb-3 text-gray-800 line-clamp-2"
+                                        >
                                             {item.name}
-                                        </h3>
+                                        </motion.h3>
 
                                         <div className="flex items-center justify-between">
                                             <span className="text-2xl font-bold text-[#6e7051]">
                                                 ${item.price.toFixed(2)}
                                             </span>
 
-                                            <button className="px-6 py-3 bg-orange-500 text-white rounded-full cursor-pointer hover:bg-orange-600 transform hover:scale-105 transition-all duration-300 shadow-md">
+                                            <motion.button
+                                                whileHover={{ scale: 1.05 }}
+                                                whileTap={{ scale: 0.95 }}
+                                                onClick={() => handleAddToCart(item)}
+                                                className="px-6 py-3 bg-orange-500 text-white rounded-full cursor-pointer hover:bg-orange-600 transform transition-all duration-300 shadow-md"
+                                            >
                                                 Add To Cart
-                                            </button>
+                                            </motion.button>
                                         </div>
                                     </div>
                                 </motion.div>
@@ -152,7 +179,11 @@ export default function Formen() {
                             </motion.p>
                         )}
 
-                        <ProductModel selectedProduct={selectedProduct} onClose={() => setSelectedProduct(null)} />
+                        <ProductModel
+                            selectedProduct={selectedProduct}
+                            onClose={() => setSelectedProduct(null)}
+                            onAddToCart={handleAddToCart}
+                        />
                     </div>
                 </div>
             </section>

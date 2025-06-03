@@ -5,9 +5,14 @@ import { useScrollToTop } from "../src/hooks/useScrollToTop";
 import DividerInShop from "../src/components/DividerInShop";
 import { motion } from "framer-motion";
 import { useDebounce } from 'use-debounce';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../src/store/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
 export default function Forwomen() {
     useScrollToTop();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [debouncedText] = useDebounce(searchTerm, 1000);
@@ -15,6 +20,11 @@ export default function Forwomen() {
     const searchHandle = (e) => {
         setSearchTerm(e);
     }
+
+    const handleAddToCart = (item) => {
+        dispatch(cartActions.addToCart(item));
+        navigate('/cart');
+    };
 
     let dummy2 = [
         {
@@ -35,7 +45,7 @@ export default function Forwomen() {
             id: 3,
             name: 'shoes 1',
             price: 50.00,
-            statue: 'no',
+            statue: 'sale',
             img: "/womens.jpg",
         },
         {
@@ -56,7 +66,7 @@ export default function Forwomen() {
             id: 6,
             name: 'shoes 1',
             price: 50.00,
-            statue: 'no',
+            statue: 'sale',
             img: "/womens.jpg",
         },
     ]
@@ -81,7 +91,7 @@ export default function Forwomen() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="relative mt-6 p-4"
                     >
-                        <div className="absolute inset-y-0 pl-3 flex items-center pointer-events-none ml-2">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none ml-2">
                             <SearchIcon className="text-gray-500" />
                         </div>
                         <input
@@ -148,6 +158,7 @@ export default function Forwomen() {
                                             <motion.button
                                                 whileHover={{ scale: 1.05 }}
                                                 whileTap={{ scale: 0.95 }}
+                                                onClick={() => handleAddToCart(item)}
                                                 className="px-6 py-3 bg-orange-500 text-white rounded-full cursor-pointer hover:bg-orange-600 transform transition-all duration-300 shadow-md"
                                             >
                                                 Add To Cart
@@ -168,7 +179,11 @@ export default function Forwomen() {
                             </motion.p>
                         )}
 
-                        <ProductModel selectedProduct={selectedProduct} onClose={() => setSelectedProduct(null)} />
+                        <ProductModel
+                            selectedProduct={selectedProduct}
+                            onClose={() => setSelectedProduct(null)}
+                            onAddToCart={handleAddToCart}
+                        />
                     </div>
                 </div>
             </section>
