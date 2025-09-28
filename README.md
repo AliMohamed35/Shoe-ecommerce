@@ -14,7 +14,6 @@ This project is a modern e-commerce platform focused on selling shoes. It featur
 
 * **React.js**: Front-end JavaScript library for building user interfaces using a component-based approach.
 * **Redux Toolkit**: State management for React apps, simplifies the process of managing global app state.
-* **Axios**: For making HTTP requests to the backend.
 * **JSON Server**: Used as a fake REST API to simulate a backend during development.
 * **Material UI (MUI)**: UI component library for implementing consistent and visually appealing design.
 * **Tailwind CSS**: Utility-first CSS framework used alongside MUI for additional customization and responsiveness.
